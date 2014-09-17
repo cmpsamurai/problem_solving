@@ -1,0 +1,41 @@
+#include<iostream>
+#include<map>
+#include<vector>
+
+//http://codeforces.com/problemset/problem/456/A solved
+
+#include <algorithm> 
+
+using namespace std;
+typedef map<int, int>::iterator it_type;
+
+int main()
+{
+	int n;
+	cin>>n;
+	int p,q;
+
+	map<int,int> m;
+	vector<int> qualities;
+
+	for(int i=0;i<n;i++)
+	{
+		cin>>p>>q;
+		m[p]=q;
+	}
+
+
+	for(it_type iterator = m.begin(); iterator != m.end(); iterator++) {
+			qualities.push_back(iterator->second);			
+		}
+
+	if(!is_sorted(qualities.begin(),qualities.end()))
+	{
+		cout<<"Happy Alex";
+	}
+	else
+	{
+		cout<<"Poor Alex";
+	}
+	return 0;
+}
